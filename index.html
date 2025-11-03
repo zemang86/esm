@@ -3,7 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ESUKAN MASTERCLASS SERIES</title>
+    <title>ESUKAN MASTERCLASS SERIES - The Harsh Truth About Malaysian Esports Quality</title>
+    <meta name="description" content="Join ESUKAN Masterclass Nov 26-27, 2025. Expert panel on Malaysian esports quality + hands-on AI workshops. Limited to 100 per venue. Register now!">
+    <meta name="keywords" content="esports malaysia, esukan masterclass, esports training, content creation, streaming, shoutcasting, esports professional development, AI tools esports">
+    <meta name="author" content="Kitamen Resources Sdn Bhd">
+    <link rel="canonical" href="https://kitamen.my">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://kitamen.my">
+    <meta property="og:title" content="ESUKAN MASTERCLASS SERIES - The Harsh Truth About Malaysian Esports">
+    <meta property="og:description" content="Expert panel discussion on why 80% of Malaysian esports programs fail. Hands-on AI workshops for content creation & streaming. Nov 26-27, 2025.">
+    <meta property="og:image" content="https://kitamen.my/image/og-image.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://kitamen.my">
+    <meta property="twitter:title" content="ESUKAN MASTERCLASS SERIES - Malaysian Esports Quality">
+    <meta property="twitter:description" content="Join expert panel discussion & hands-on AI workshops. Nov 26-27, 2025. Limited slots available.">
+    <meta property="twitter:image" content="https://kitamen.my/image/og-image.png">
+
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
@@ -12,6 +32,10 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
 
         :root {
@@ -53,6 +77,36 @@
             font-weight: 700;
             font-size: 18px;
             letter-spacing: -1px;
+        }
+
+        .burger-menu {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 5px;
+            z-index: 1001;
+        }
+
+        .burger-menu span {
+            width: 25px;
+            height: 2px;
+            background-color: var(--black);
+            transition: all 0.3s ease;
+        }
+
+        .burger-menu.active span:nth-child(1) {
+            transform: rotate(45deg) translate(7px, 7px);
+        }
+
+        .burger-menu.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .burger-menu.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -7px);
         }
 
         nav ul {
@@ -100,6 +154,11 @@
             margin-bottom: 20px;
             letter-spacing: -2px;
             line-height: 1.1;
+            background-color: var(--black);
+            color: var(--white);
+            padding: 30px 40px;
+            display: inline-block;
+            border: 2px solid var(--black);
         }
 
         .hero .tagline {
@@ -111,10 +170,42 @@
         .hero .event-details {
             margin: 40px 0;
             font-size: 16px;
+            text-align: center;
         }
 
         .hero .event-details div {
             margin: 10px 0;
+        }
+
+        .session-note {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--black);
+            margin-bottom: 20px !important;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .event-divider {
+            border: none;
+            border-top: 2px solid var(--black);
+            margin: 20px auto;
+            width: 50%;
+        }
+
+        .event-note {
+            font-size: 14px;
+            color: var(--gray-dark);
+            font-style: italic;
+            margin-top: 20px;
+        }
+
+        .register-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 20px;
+            flex-wrap: wrap;
         }
 
         .btn {
@@ -143,6 +234,43 @@
         .btn-outline:hover {
             background-color: var(--black);
             color: var(--white);
+        }
+
+        /* Partner Logos */
+        .partner-logos {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            margin-top: 60px;
+            flex-wrap: wrap;
+        }
+
+        .partner-logos a {
+            display: inline-block;
+            transition: opacity 0.2s;
+        }
+
+        .partner-logos a:hover {
+            opacity: 0.7;
+        }
+
+        .partner-logo {
+            height: 60px;
+            width: auto;
+            object-fit: contain;
+            display: block;
+        }
+
+        .logo-small {
+            height: 34px;
+        }
+
+        .logo-divider {
+            width: 2px;
+            height: 60px;
+            background-color: var(--black);
+            opacity: 0.3;
         }
 
         /* Typography */
@@ -204,8 +332,30 @@
 
         .speaker-card {
             border: 2px solid var(--black);
-            padding: 30px;
+            padding: 0;
             text-align: center;
+            background-color: var(--white);
+            box-shadow: 8px 8px 0 var(--black);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .speaker-card:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: 10px 10px 0 var(--black);
+        }
+
+        .speaker-image {
+            width: 100%;
+            aspect-ratio: 1;
+            background-color: var(--gray-light);
+            border-bottom: 2px solid var(--black);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .speaker-info {
+            padding: 30px;
         }
 
         .speaker-card h4 {
@@ -216,6 +366,21 @@
         .speaker-card p {
             font-size: 12px;
             margin: 0;
+        }
+
+        .speaker-social {
+            display: inline-block;
+            margin-top: 15px;
+            color: var(--black);
+            transition: opacity 0.2s;
+        }
+
+        .speaker-social:hover {
+            opacity: 0.6;
+        }
+
+        .speaker-social svg {
+            display: block;
         }
 
         /* Workshop Tracks */
@@ -366,6 +531,61 @@
             font-size: 14px;
         }
 
+        /* Partners Section */
+        .partners-section {
+            padding: 80px 0;
+            background-color: var(--gray-light);
+            border-top: 2px solid var(--black);
+        }
+
+        .partner-category {
+            margin-bottom: 60px;
+            text-align: center;
+        }
+
+        .partner-category:last-child {
+            margin-bottom: 0;
+        }
+
+        .partner-category h3 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 30px;
+            letter-spacing: 1px;
+        }
+
+        .partner-logos-grid {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .partner-logos-grid a {
+            display: inline-block;
+            transition: opacity 0.2s;
+        }
+
+        .partner-logos-grid a:hover {
+            opacity: 0.7;
+        }
+
+        .partner-logo-large {
+            height: 80px;
+            width: auto;
+            object-fit: contain;
+            display: block;
+        }
+
+        .partner-logo-small {
+            height: 40px;
+        }
+
+        .logo-rounded {
+            border-radius: 10px;
+        }
+
         /* Footer */
         footer {
             background-color: var(--black);
@@ -380,9 +600,41 @@
                 padding: 15px 20px;
             }
 
-            nav ul {
-                gap: 15px;
-                font-size: 12px;
+            .burger-menu {
+                display: flex;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 70%;
+                height: 100vh;
+                background-color: var(--white);
+                flex-direction: column;
+                padding: 80px 30px 30px;
+                gap: 0;
+                border-left: 2px solid var(--black);
+                transition: right 0.3s ease;
+            }
+
+            .nav-links.active {
+                right: 0;
+            }
+
+            .nav-links li {
+                border-bottom: 2px solid var(--black);
+            }
+
+            .nav-links li:last-child {
+                border-bottom: none;
+            }
+
+            .nav-links a {
+                display: block;
+                padding: 20px 0;
+                font-size: 16px;
+                font-weight: 700;
             }
 
             .container {
@@ -390,11 +642,36 @@
             }
 
             .hero h1 {
-                font-size: 32px;
+                font-size: 28px;
+                padding: 20px 25px;
             }
 
             .hero .tagline {
                 font-size: 18px;
+            }
+
+            .session-note {
+                font-size: 12px;
+            }
+
+            .event-note {
+                font-size: 12px;
+                padding: 0 10px;
+            }
+
+            .event-divider {
+                width: 70%;
+            }
+
+            .register-buttons {
+                flex-direction: column;
+                gap: 15px;
+                align-items: center;
+            }
+
+            .btn {
+                width: 100%;
+                max-width: 300px;
             }
 
             h2 {
@@ -417,6 +694,51 @@
             .schedule td {
                 padding: 15px 10px;
             }
+
+            .partner-logos {
+                gap: 20px;
+                margin-top: 40px;
+            }
+
+            .partner-logo {
+                height: 40px;
+            }
+
+            .logo-small {
+                height: 22px;
+            }
+
+            .logo-divider {
+                flex-basis: 100%;
+                height: 2px;
+                background: linear-gradient(to right, transparent 25%, var(--black) 25%, var(--black) 75%, transparent 75%);
+                margin: 10px 0;
+            }
+
+            .partners-section {
+                padding: 60px 0;
+            }
+
+            .partner-category {
+                margin-bottom: 40px;
+            }
+
+            .partner-category h3 {
+                font-size: 16px;
+            }
+
+            .partner-logos-grid {
+                gap: 15px;
+                flex-wrap: nowrap;
+            }
+
+            .partner-logo-large {
+                height: 40px;
+            }
+
+            .partner-logo-small {
+                height: 20px;
+            }
         }
     </style>
 </head>
@@ -425,11 +747,16 @@
     <nav>
         <div class="container">
             <div class="logo">ESUKAN.MASTERCLASS</div>
-            <ul>
-                <li><a href="#home">HOME</a></li>
-                <li><a href="#about">ABOUT</a></li>
-                <li><a href="#schedule">SCHEDULE</a></li>
-                <li><a href="#register">REGISTER</a></li>
+            <button class="burger-menu" id="burgerMenu" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home" class="nav-link">HOME</a></li>
+                <li><a href="#about" class="nav-link">ABOUT</a></li>
+                <li><a href="#schedule" class="nav-link">SCHEDULE</a></li>
+                <li><a href="#register" class="nav-link">REGISTER</a></li>
             </ul>
         </div>
     </nav>
@@ -440,11 +767,36 @@
             <h1>ESUKAN MASTERCLASS SERIES</h1>
             <div class="tagline">The Harsh Truth About Malaysian Esports Quality</div>
             <div class="event-details">
-                <div><strong>DAY 1:</strong> 27 November 2025 | ICMS, Petaling Jaya</div>
-                <div><strong>DAY 2:</strong> 28 November 2025 | APU, Bukit Jalil</div>
+                <div class="session-note">Two Sessions Available - Choose Your Preferred Date</div>
+                <div><strong>DAY 1:</strong> 26 November 2025 | APU, Bukit Jalil</div>
+                <div><strong>DAY 2:</strong> 27 November 2025 | ICMS, Petaling Jaya</div>
                 <div><strong>TIME:</strong> 10:00 AM - 3:00 PM</div>
+                <hr class="event-divider">
+                <div class="event-note">Recorded sessions accessible online after the event for review, revision, and continuous learning</div>
             </div>
             <a href="#register" class="btn">REGISTER NOW</a>
+
+            <div class="partner-logos">
+                <a href="https://esportsintegrated.com/" target="_blank" rel="noopener noreferrer">
+                    <img src="image/dek.png" alt="DEK" class="partner-logo">
+                </a>
+                <a href="https://esportsintegrated.com/" target="_blank" rel="noopener noreferrer">
+                    <img src="image/esi.png" alt="ESI" class="partner-logo">
+                </a>
+                <a href="https://esportsintegrated.com/" target="_blank" rel="noopener noreferrer">
+                    <img src="image/RAKAN MUDA.png" alt="Rakan Muda" class="partner-logo">
+                </a>
+                <a href="https://esportsintegrated.com/" target="_blank" rel="noopener noreferrer">
+                    <img src="image/RAKAN DIGITAL.png" alt="Rakan Digital" class="partner-logo">
+                </a>
+                <div class="logo-divider"></div>
+                <a href="https://hi.kitamen.my" target="_blank" rel="noopener noreferrer">
+                    <img src="image/kitamen.png" alt="Kitamen" class="partner-logo logo-small">
+                </a>
+                <a href="https://www.edventure.plus" target="_blank" rel="noopener noreferrer">
+                    <img src="image/eplus.png" alt="E+" class="partner-logo logo-rounded">
+                </a>
+            </div>
         </div>
     </section>
 
@@ -474,25 +826,65 @@
     <section class="panel-discussion">
         <div class="container">
             <h2>FEATURED PANEL DISCUSSION</h2>
-            <p><strong>TOPIC:</strong> Why 80% of Malaysian Esports Events Are Failing</p>
+            <p><strong>TOPIC:</strong> Why 80% of Malaysian Esports Related Programs Fail?</p>
             <p>Standards, Reality Checks & What Separates Pros from Pretenders</p>
 
             <div class="speakers">
                 <div class="speaker-card">
-                    <h4>[SPEAKER NAME]</h4>
-                    <p>Veteran Streamer & Content Creator</p>
+                    <div class="speaker-image" style="background-image: url('image/speakers/j-hunter.png');"></div>
+                    <div class="speaker-info">
+                        <h4>J HUNTER</h4>
+                        <p>Designation</p>
+                        <a href="https://www.instagram.com/jhuntergaming" target="_blank" class="speaker-social" rel="noopener noreferrer">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                            </svg>
+                        </a>
+                    </div>
                 </div>
                 <div class="speaker-card">
-                    <h4>[SPEAKER NAME]</h4>
-                    <p>Moonton MPL Professional</p>
+                    <div class="speaker-image" style="background-image: url('image/speakers/fikri.png');"></div>
+                    <div class="speaker-info">
+                        <h4>FIKRI</h4>
+                        <p>Designation</p>
+                        <a href="https://www.linkedin.com/in/fikrizal/?originalSubdomain=my" target="_blank" class="speaker-social" rel="noopener noreferrer">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                                <rect x="2" y="9" width="4" height="12"></rect>
+                                <circle cx="4" cy="4" r="2"></circle>
+                            </svg>
+                        </a>
+                    </div>
                 </div>
                 <div class="speaker-card">
-                    <h4>[SPEAKER NAME]</h4>
-                    <p>Professional Shoutcaster</p>
+                    <div class="speaker-image" style="background-image: url('image/speakers/sith.png');"></div>
+                    <div class="speaker-info">
+                        <h4>SITH</h4>
+                        <p>Designation</p>
+                        <a href="https://www.linkedin.com/in/muhammad-muqsith-49816aab/?originalSubdomain=my" target="_blank" class="speaker-social" rel="noopener noreferrer">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                                <rect x="2" y="9" width="4" height="12"></rect>
+                                <circle cx="4" cy="4" r="2"></circle>
+                            </svg>
+                        </a>
+                    </div>
                 </div>
                 <div class="speaker-card">
-                    <h4>[SPEAKER NAME]</h4>
-                    <p>Professional Host & Shoutcaster</p>
+                    <div class="speaker-image" style="background-image: url('image/speakers/flava.png');"></div>
+                    <div class="speaker-info">
+                        <h4>FLAVA</h4>
+                        <p>Designation</p>
+                        <a href="https://www.linkedin.com/in/muhammad-farouq-abdul-patah-925977170" target="_blank" class="speaker-social" rel="noopener noreferrer">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                                <rect x="2" y="9" width="4" height="12"></rect>
+                                <circle cx="4" cy="4" r="2"></circle>
+                            </svg>
+                        </a>
+                    </div>
                 </div>
             </div>
 
@@ -697,12 +1089,57 @@
             <h2>THE REALITY CHECK AWAITS</h2>
             <p class="tagline">"This isn't about sugar-coating the industry. This is about giving you the brutal, honest truth about what it takes to be professional in Malaysian esports."</p>
             <p class="limited">LIMITED TO 100 PARTICIPANTS PER VENUE</p>
-            <a href="#" class="btn">REGISTER NOW</a>
-            
+
+            <div class="register-buttons">
+                <a href="https://luma.com/hwddafz1" target="_blank" rel="noopener noreferrer" class="btn">REGISTER - DAY 1</a>
+                <a href="https://luma.com/3ewrvmgd" target="_blank" rel="noopener noreferrer" class="btn">REGISTER - DAY 2</a>
+            </div>
+
             <div class="contact">
                 <p><strong>Organized by:</strong> Kitamen Resources Sdn Bhd</p>
-                <p><strong>Email:</strong> [contact email]</p>
+                <p><strong>Email:</strong> hello@kitamen.my</p>
                 <p><strong>Website:</strong> kitamen.my</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partners Section -->
+    <section class="partners-section">
+        <div class="container">
+            <div class="partner-category">
+                <h3>MADE POSSIBLE BY</h3>
+                <div class="partner-logos-grid">
+                    <a href="https://esportsintegrated.com/" target="_blank" rel="noopener noreferrer">
+                        <img src="image/dek.png" alt="DEK" class="partner-logo-large">
+                    </a>
+                    <a href="https://esportsintegrated.com/" target="_blank" rel="noopener noreferrer">
+                        <img src="image/esi.png" alt="ESI" class="partner-logo-large">
+                    </a>
+                    <a href="https://esportsintegrated.com/" target="_blank" rel="noopener noreferrer">
+                        <img src="image/RAKAN MUDA.png" alt="Rakan Muda" class="partner-logo-large">
+                    </a>
+                    <a href="https://esportsintegrated.com/" target="_blank" rel="noopener noreferrer">
+                        <img src="image/RAKAN DIGITAL.png" alt="Rakan Digital" class="partner-logo-large">
+                    </a>
+                </div>
+            </div>
+
+            <div class="partner-category">
+                <h3>ORGANIZED BY</h3>
+                <div class="partner-logos-grid">
+                    <a href="https://hi.kitamen.my" target="_blank" rel="noopener noreferrer">
+                        <img src="image/kitamen.png" alt="Kitamen" class="partner-logo-large partner-logo-small">
+                    </a>
+                </div>
+            </div>
+
+            <div class="partner-category">
+                <h3>STRATEGIC PARTNER</h3>
+                <div class="partner-logos-grid">
+                    <a href="https://www.edventure.plus" target="_blank" rel="noopener noreferrer">
+                        <img src="image/eplus.png" alt="E+" class="partner-logo-large logo-rounded">
+                    </a>
+                </div>
             </div>
         </div>
     </section>
@@ -713,5 +1150,221 @@
             <p>&copy; 2025 Kitamen Resources Sdn Bhd. All rights reserved.</p>
         </div>
     </footer>
+
+    <script>
+        // Mobile menu toggle
+        const burgerMenu = document.getElementById('burgerMenu');
+        const navLinks = document.getElementById('navLinks');
+        const navLinkElements = document.querySelectorAll('.nav-link');
+
+        burgerMenu.addEventListener('click', () => {
+            burgerMenu.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+
+        // Close menu when clicking on a link
+        navLinkElements.forEach(link => {
+            link.addEventListener('click', () => {
+                burgerMenu.classList.remove('active');
+                navLinks.classList.remove('active');
+            });
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!navLinks.contains(e.target) && !burgerMenu.contains(e.target)) {
+                burgerMenu.classList.remove('active');
+                navLinks.classList.remove('active');
+            }
+        });
+    </script>
+
+    <!-- JSON-LD Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Event",
+        "name": "ESUKAN Masterclass Series - Day 1",
+        "description": "Expert panel discussion on Malaysian esports quality standards with hands-on AI workshops for content creation and streaming technology.",
+        "startDate": "2025-11-26T10:00:00+08:00",
+        "endDate": "2025-11-26T15:00:00+08:00",
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "location": {
+            "@type": "Place",
+            "name": "APU - Asia Pacific University",
+            "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Bukit Jalil",
+                "addressRegion": "Kuala Lumpur",
+                "addressCountry": "MY"
+            }
+        },
+        "organizer": {
+            "@type": "Organization",
+            "name": "Kitamen Resources Sdn Bhd",
+            "url": "https://hi.kitamen.my",
+            "email": "hello@kitamen.my"
+        },
+        "offers": {
+            "@type": "Offer",
+            "url": "https://luma.com/hwddafz1",
+            "price": "0",
+            "priceCurrency": "MYR",
+            "availability": "https://schema.org/InStock",
+            "validFrom": "2025-01-01"
+        },
+        "performer": [
+            {
+                "@type": "Person",
+                "name": "J Hunter"
+            },
+            {
+                "@type": "Person",
+                "name": "Fikri"
+            },
+            {
+                "@type": "Person",
+                "name": "Sith"
+            },
+            {
+                "@type": "Person",
+                "name": "Flava"
+            }
+        ]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Event",
+        "name": "ESUKAN Masterclass Series - Day 2",
+        "description": "Expert panel discussion on Malaysian esports quality standards with hands-on AI workshops for content creation and streaming technology.",
+        "startDate": "2025-11-27T10:00:00+08:00",
+        "endDate": "2025-11-27T15:00:00+08:00",
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "location": {
+            "@type": "Place",
+            "name": "ICMS - International College of Music",
+            "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Petaling Jaya",
+                "addressRegion": "Selangor",
+                "addressCountry": "MY"
+            }
+        },
+        "organizer": {
+            "@type": "Organization",
+            "name": "Kitamen Resources Sdn Bhd",
+            "url": "https://hi.kitamen.my",
+            "email": "hello@kitamen.my"
+        },
+        "offers": {
+            "@type": "Offer",
+            "url": "https://luma.com/3ewrvmgd",
+            "price": "0",
+            "priceCurrency": "MYR",
+            "availability": "https://schema.org/InStock",
+            "validFrom": "2025-01-01"
+        },
+        "performer": [
+            {
+                "@type": "Person",
+                "name": "J Hunter"
+            },
+            {
+                "@type": "Person",
+                "name": "Fikri"
+            },
+            {
+                "@type": "Person",
+                "name": "Sith"
+            },
+            {
+                "@type": "Person",
+                "name": "Flava"
+            }
+        ]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Kitamen Resources Sdn Bhd",
+        "url": "https://hi.kitamen.my",
+        "logo": "https://kitamen.my/image/kitamen.png",
+        "email": "hello@kitamen.my",
+        "description": "Leading esports solutions provider in Malaysia specializing in tournament management, broadcasting services, AI-driven esports solutions, and capacity building programs."
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What is the ESUKAN Masterclass Series?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "The ESUKAN Masterclass Series is a comprehensive training program focused on exposing the harsh truths about Malaysian esports quality and providing professional skills development. It features expert panel discussions, hands-on AI workshops for content creation and streaming, and networking opportunities with industry professionals."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Who should attend this masterclass?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "This masterclass is ideal for aspiring professionals (shoutcasters, streamers, content creators), production teams (broadcast teams, video editors, graphics designers), and event organizers (event managers, tournament hosts, community leaders) who want to elevate their skills to professional standards."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What's included in the registration?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Registration includes free breakfast and lunch, certificate of participation from Kitamen Academy, access to AI tools during workshops, all workshop materials, and networking opportunities with industry professionals. Recorded sessions will also be accessible online after the event for review and continuous learning."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can I attend both Day 1 and Day 2?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "You need to choose one session. Day 1 is on November 26, 2025 at APU Bukit Jalil, and Day 2 is on November 27, 2025 at ICMS Petaling Jaya. Both sessions offer the same content and experience, with limited capacity of 100 participants per venue."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Will the sessions be recorded?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes! All sessions will be recorded and made accessible online after the physical masterclass event. This allows participants to review, revise, and continue learning from the content at their own pace."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Where are the venues located?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Day 1 (November 26, 2025) will be held at APU (Asia Pacific University) in Bukit Jalil, Kuala Lumpur. Day 2 (November 27, 2025) will be held at ICMS (International College of Music) in Petaling Jaya, Selangor."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How do I register for the masterclass?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "You can register by clicking the 'REGISTER - DAY 1' or 'REGISTER - DAY 2' buttons on this page. Each button will take you to the respective registration page for your chosen date. Registration is limited to 100 participants per venue, so early registration is recommended."
+                }
+            }
+        ]
+    }
+    </script>
 </body>
 </html>
